@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Statement Canvas Reestructurado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .canvas-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            padding: 1rem;
+        }
+        @media (min-width: 1024px) {
+            .canvas-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .canvas-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+        }
+        .canvas-card h2 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 0.5rem;
+        }
+        .canvas-card p, .canvas-card ul {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        .canvas-card ul {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+        .canvas-card ul li {
+            margin-bottom: 0.5rem;
+        }
+        .canvas-card.main-problem {
+            grid-column: 1 / -1;
+        }
+        @media (min-width: 1024px) {
+            .main-problem {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #1e3a8a;
+            color: white;
+        }
+        .header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 1.125rem;
+            max-width: 800px;
+            margin: 0.5rem auto 0;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Problem Statement Canvas</h1>
+        <p>Este lienzo describe un problema crítico en la adaptación de productos digitales financieros a regulaciones. Cada cuadrante explora un aspecto clave del problema.</p>
+    </header>
+
+    <div class="canvas-container">
+        <div class="canvas-card main-problem">
+            <h2>1. Problema</h2>
+            <p>La adaptación de productos financieros digitales a la regulación es un proceso <strong>lento, costoso y fragmentado</strong>, basado en la interpretación manual y la colaboración ineficiente entre equipos de producto, legales y de tecnología.</p>
+            <br>
+            <p>Esto resulta en un <strong>"time-to-market" prolongado</strong>, un alto riesgo de incumplimiento y la pérdida de oportunidades para innovar y generar confianza en el consumidor, perpetuando la visión de la regulación como un freno en lugar de un catalizador estratégico.</p>
+        </div>
+
+        <div class="canvas-card">
+            <h2>2. Contexto</h2>
+            <p>El mercado financiero globalizado presenta una creciente presión por la innovación, la inclusión financiera y la protección al consumidor.</p>
+            <br>
+            <p>La regulación no es estática; evoluciona rápidamente, impulsada por nuevas tecnologías (IA, blockchain), la necesidad de estabilidad sistémica y eventos geopolíticos.</p>
+        </div>
+
+        <div class="canvas-card">
+            <h2>3. Clientes</h2>
+            <p><strong>Equipos multidisciplinarios</strong> dentro de bancos y fintechs que desarrollan y gestionan productos financieros digitales. Estos equipos incluyen roles de:</p>
+             <ul>
+                <li>Producto</li>
+                <li>Legal</li>
+                <li>Cumplimiento (Compliance)</li>
+                <li>Tecnología</li>
+            </ul>
+        </div>
+
+        <div class="canvas-card">
+            <h2>4. Impacto Emocional</h2>
+            <p><strong>¿Cómo se sienten los equipos?</strong></p>
+            <ul>
+                <li><strong>Frustración:</strong> Por los retrasos y la burocracia que obstaculizan la innovación.</li>
+                <li><strong>Incertidumbre y Ansiedad:</strong> Ante la ambigüedad regulatoria y el temor a cometer errores costosos.</li>
+                <li><strong>Desconfianza:</strong> Entre departamentos, que se culpan mutuamente por los problemas.</li>
+                <li><strong>Agotamiento:</strong> Por la carga de trabajo manual y repetitiva asociada al cumplimiento.</li>
+            </ul>
+        </div>
+
+        <div class="canvas-card">
+            <h2>5. Impacto Cuantitativo</h2>
+            <p><strong>¿Cuáles son los impactos medibles?</strong></p>
+            <ul>
+                <li><strong>Costos Operativos Elevados:</strong> Aumento de los gastos en consultoría legal y horas-hombre. El costo de la no conformidad puede ser hasta 3 veces mayor que la inversión en cumplimiento.</li>
+                <li><strong>Retraso en el "Time-to-Market":</strong> Meses de retraso en el lanzamiento de productos, implicando pérdida de ingresos.</li>
+                <li><strong>Riesgo de Multas:</strong> Sanciones financieras significativas por incumplimiento normativo.</li>
+                <li><strong>Pérdida de Clientes:</strong> La falta de confianza y los productos mal adaptados erosionan la base de usuarios.</li>
+            </ul>
+        </div>
+
+        <div class="canvas-card">
+            <h2>6. Alternativas</h2>
+            <p>Actualmente, los equipos enfrentan los desafíos regulatorios mediante:</p>
+            <ul>
+                <li><strong>Enfoques Reactivos:</strong> Tratan el cumplimiento como una revisión final, generando fricción y retrasos.</li>
+                <li><strong>Dependencia de Consultoría Externa:</strong> Contratación de expertos legales para interpretar normativas.</li>
+                <li><strong>Silos Organizacionales:</strong> Falta de colaboración y comunicación fluida entre equipos.</li>
+                <li><strong>Herramientas Genéricas:</strong> Uso de hojas de cálculo y documentos para gestionar el cumplimiento.</li>
+            </ul>
+        </div>
+
+        <div class="canvas-card">
+            <h2>7. Deficiencias en las alternativas</h2>
+            <p>Las soluciones actuales son deficientes porque:</p>
+            <ul>
+                <li><strong>Generan fricción y costos:</strong> El enfoque reactivo obliga a rediseños costosos y crea conflictos entre equipos.</li>
+                <li><strong>No son escalables:</strong> Los métodos manuales y herramientas genéricas no pueden manejar el volumen y la complejidad creciente de las normativas.</li>
+                <li><strong>Perpetúan los silos:</strong> No fomentan la colaboración interfuncional necesaria, resultando en desalineación y falta de una visión compartida del riesgo.</li>
+                <li><strong>Crean cuellos de botella:</strong> La dependencia de expertos aislados (internos o externos) ralentiza la toma de decisiones y el desarrollo.</li>
+                <li><strong>Aumentan el riesgo:</strong> La falta de integración y los procesos manuales elevan la probabilidad de errores humanos y, por tanto, de incumplimientos.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
