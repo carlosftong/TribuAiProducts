@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .canvas-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            padding: 1rem;
+        }
+        @media (min-width: 1024px) {
+            .canvas-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .canvas-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+        }
+        .canvas-card h2 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 0.5rem;
+        }
+        .canvas-card p, .canvas-card ul {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        .canvas-card ul {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+        .canvas-card ul li {
+            margin-bottom: 0.5rem;
+        }
+        .canvas-card.main-problem {
+            grid-column: 1 / -1;
+        }
+        @media (min-width: 1024px) {
+            .main-problem {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #1e3a8a;
+            color: white;
+        }
+        .header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 1.125rem;
+            max-width: 800px;
+            margin: 0.5rem auto 0;
+            opacity: 0.9;
+        }
+        .jtbd-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #f0f4ff;
+            border-left: 4px solid #1e3a8a;
+            border-radius: 0.75rem;
+        }
+    </style>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Personas – Challenge Bank</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  
+<header class="header">
+  <h1>User Personas – Challenge Bank LATAM</h1>
+  <p>Esta página presenta a los cuatro líderes clave de Challenge Bank LATAM. Cada uno representa una perspectiva esencial para alinear el cumplimiento regulatorio, la tecnología, el producto y los objetivos de negocio. Comprender sus motivaciones, frustraciones y necesidades nos permite construir soluciones más integrales, humanas y efectivas en el ecosistema financiero digital de América Latina.</p>
+</header>
+<section class="canvas-container">
+      <!-- User Persona Template -->
+      <div class="canvas-card" style="border-left: 4px solid #3b82f6; transition: transform 0.3s ease;">
+    
+  <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Mariana Silva" class="rounded-lg mb-4 w-full h-60 object-cover" />
+  <h2>Mariana Silva</h2>
+<p class="text-sm text-gray-600">👩‍👧‍👦 Familia: 2 hijos adolescentes | 🧘‍♀️ Aficiones: Yoga, caminatas</p>
+  <ul>
+    <li><strong>Rol:</strong> 👩‍⚖️ Líder Legal LATAM (México, Colombia, Chile y Perú)</li>
+    <li><strong>Motivaciones Profesionales:</strong> Cumplimiento normativo, reputación del banco.</li>
+    <li><strong>Motivaciones Personales:</strong> Estabilidad para sus hijos, yoga, conexión con Argentina.</li>
+    <li><strong>Frustraciones:</strong> Jerga técnica, falta de coordinación, visibilidad reducida del impacto regulatorio.</li>
+    <li><strong>Necesidades:</strong> Guías normativas funcionales, talleres tech, reuniones de alineación y visibilidad en decisiones regulatorias.</li>
+  </ul>
+  <p class="italic text-indigo-600 mt-4">"Necesito garantizar que los productos cumplan regulación sin afectar tiempos ni experiencia."</p>
+</div>
+
+      <div class="canvas-card" style="border-left: 4px solid #3b82f6; transition: transform 0.3s ease;">
+  <img src="https://tse1.mm.bing.net/th?id=OIP.1yOlicdE_vsrY4ea6uA9rwHaFX&pid=Api" alt="Carlos Mendoza" class="rounded-lg mb-4 w-full h-60 object-cover" />
+  <h2>Carlos Mendoza</h2>
+<p class="text-sm text-gray-600">👨‍👩‍👧‍👦 Familia: 2 hijos preadolescentes | 🚴‍♂️ Aficiones: Ciclismo, acompañar a sus hijos</p>
+  <ul>
+    <li><strong>Rol:</strong> 💻 Líder de Tecnología LATAM (México, Colombia, Chile y Perú)</li>
+    <li><strong>Motivaciones Profesionales:</strong> Escalabilidad tecnológica, cumplimiento desde arquitectura, innovación continua.</li>
+    <li><strong>Motivaciones Personales:</strong> Tiempo con su familia, ciclismo, acompañar a sus hijos en sus actividades.</li>
+    <li><strong>Frustraciones:</strong> Desconexión entre producto y tecnología, cambios regulatorios tardíos, deuda técnica.</li>
+    <li><strong>Necesidades:</strong> Participación temprana en diseño regulatorio, prácticas DevSecOps, alineación cross-funcional.</li>
+  </ul>
+  <p class="italic text-indigo-600 mt-4">"Necesito implementar una arquitectura que cumpla sin sacrificar estabilidad ni tiempo familiar."</p>
+</div>
+
+      <div class="canvas-card" style="border-left: 4px solid #3b82f6; transition: transform 0.3s ease;">
+  <img src="https://tse3.mm.bing.net/th?id=OIP.GTjYHrmGwTBQpN6okdRc_gHaE7&pid=Api" alt="Valentina Rodríguez" class="rounded-lg mb-4 w-full h-60 object-cover" />
+  <h2>Valentina Rodríguez</h2>
+<p class="text-sm text-gray-600">🧍‍♀️ Sin hijos | 💃 Aficiones: Vida social, meditación</p>
+  <ul>
+    <li><strong>Rol:</strong> 🎨 Líder de Producto LATAM (México, Colombia, Chile y Perú)</li>
+    <li><strong>Motivaciones Profesionales:</strong> Experiencia del usuario, cumplimiento regulatorio sin fricción, innovación centrada en el usuario.</li>
+    <li><strong>Motivaciones Personales:</strong> Bienestar, desarrollo personal, vida social activa.</li>
+    <li><strong>Frustraciones:</strong> Cambios regulatorios sin aviso, falta de claridad en requerimientos legales, interferencia con roadmap.</li>
+    <li><strong>Necesidades:</strong> Espacios de co-creación con legales y tecnología, criterios de aceptación regulatorios, autonomía en decisiones de producto.</li>
+  </ul>
+  <p class="italic text-indigo-600 mt-4">"Necesito diseñar un roadmap que armonice usuarios, regulación y negocio."</p>
+</div>
+
+      <div class="canvas-card" style="border-left: 4px solid #3b82f6; transition: transform 0.3s ease;">
+  <img src="https://images.pexels.com/photos/1343135/pexels-photo-1343135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Jorge García" class="rounded-lg mb-4 w-full h-60 object-cover" />
+  <h2>Jorge García</h2>
+<p class="text-sm text-gray-600">🧍‍♂️ Sin hijos | 🍷 Aficiones: Networking, cenas sociales</p>
+  <ul>
+    <li><strong>Rol:</strong> 📊 Líder de Negocio LATAM (México, Colombia, Chile y Perú)</li>
+    <li><strong>Motivaciones Profesionales:</strong> Crecimiento sostenido, KPIs de usuarios y activos administrados, cumplimiento normativo sin fricción.</li>
+    <li><strong>Motivaciones Personales:</strong> Ambición profesional, vida social activa, balance entre trabajo y bienestar.</li>
+    <li><strong>Frustraciones:</strong> Impacto de la regulación en KPIs, poca visibilidad de decisiones legales/técnicas.</li>
+    <li><strong>Necesidades:</strong> Paneles de impacto regulatorio, reuniones de alineación, lenguaje común con producto y legal.</li>
+  </ul>
+  <p class="italic text-indigo-600 mt-4">"Necesito impulsar crecimiento sin que la regulación frene el negocio."</p>
+</div>
+
+    </div>
+
+</section>
+
+<div class="jtbd-section">
+  <h2>🛠️ Jobs To Be Done (JTBD) por perfil</h2>
+  <ul>
+    <li>👩‍⚖️ <strong>Mariana Silva:</strong> Cuando se diseñan nuevos productos o funcionalidades, necesito tener visibilidad temprana para asegurar su viabilidad regulatoria, evitando retrabajo o sanciones.</li>
+    <li>👨‍💻 <strong>Carlos Mendoza:</strong> Cuando se define la arquitectura de una solución, necesito que los requisitos regulatorios estén claros desde el principio para asegurar que el diseño técnico los contemple sin comprometer la escalabilidad.</li>
+    <li>🎯 <strong>Valentina Rodríguez:</strong> Cuando priorizo el roadmap de producto, necesito entender el impacto de la regulación para tomar decisiones de diseño sin comprometer la experiencia del usuario.</li>
+    <li>📈 <strong>Jorge García:</strong> Cuando evalúo oportunidades de negocio, necesito comprender los límites regulatorios para asegurar que las metas comerciales sean alcanzables y sostenibles.</li>
+  </ul>
+</div>
+
+</body>
+</html>
