@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personas - Challenge Bank</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f4f5; /* Zinc 100 */
+    }
+    .tab-button.active {
+      border-color: #3b82f6; /* Blue 500 */
+      color: #3b82f6;
+      background-color: #ffffff;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+
+<div class="max-w-4xl mx-auto">
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-gray-800">Usuario Ideal</h1>
+    <p class="text-gray-600 mt-1">Perfiles detallados para entender a nuestros stakeholders clave.</p>
+  </header>
+
+  <!-- Contenedor de Pestañas -->
+  <div class="tabs border-b border-gray-200">
+    <button class="tab-button text-sm sm:text-base py-3 px-4 font-semibold text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200 active" data-tab="carlos">Carlos Mendoza</button>
+    <button class="tab-button text-sm sm:text-base py-3 px-4 font-semibold text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200" data-tab="mariana">Mariana Silva</button>
+    <button class="tab-button text-sm sm:text-base py-3 px-4 font-semibold text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200" data-tab="jorge">Jorge García</button>
+    <button class="tab-button text-sm sm:text-base py-3 px-4 font-semibold text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200" data-tab="valentina">Valentina Rodríguez</button>
+  </div>
+
+  <!-- Contenido de las Pestañas -->
+  <div class="bg-white rounded-b-lg shadow-sm">
+    <div id="carlos" class="tab-content p-6 md:p-8 active">
+      <h2 class="text-2xl font-bold text-gray-900">Carlos Mendoza – CTO Regional</h2>
+      <div class="mt-4 space-y-4 text-gray-700 leading-relaxed">
+        <p><strong>Escena de Apertura (Punto de Entrada Sensorial):</strong> La brisa fresca de las montañas andinas atraviesa la ventana entreabierta del estudio de Carlos en Bogotá. Afuera, la ciudad vibra con su caos matutino, pero dentro, lo que domina es el resplandor tenue de dashboards en su monitor ultrapanorámico: métricas de disponibilidad, rendimiento, alertas verdes, naranjas y rojas. Carlos revisa los reportes semanales de calidad del sistema mientras toma un café negro, fuerte. Lleva puestos unos audífonos sin música, solo para aislarse del mundo. En su celular vibra una notificación: su hija tiene entrenamiento en veinte minutos. Mira el reloj. Cierra el informe, guarda el insight en la cabeza. Su día apenas empieza.</p>
+        <p><strong>Antecedentes e Identidad:</strong> Carlos creció en Medellín, entre cerros, bicicletas y computadoras desarmadas. Desde niño le fascinaba entender cómo funcionaban las cosas. Su madre, enfermera, le enseñó cuidado y paciencia; su padre, obrero, le transmitió una ética del esfuerzo silencioso. Estudió ingeniería de sistemas y fue escalando desde desarrollador hasta líder de tecnología. Pasó por varias startups antes de llegar a Challenge Bank, donde hoy es responsable de garantizar que la infraestructura de toda LATAM sea segura, escalable y adaptable al entorno regulatorio.</p>
+        <p><strong>Identidad Laboral y Responsabilidades:</strong> Carlos no programa. Su rol como CTO no es escribir código, sino garantizar que la tecnología sea el cimiento confiable de la organización. Supervisa equipos de ingeniería, arquitectura, DevOps y seguridad. Recibe reportes constantes de rendimiento, calidad del código, disponibilidad de los servicios, cumplimiento de SLAs y avances en los ciclos de desarrollo. Para él, los sistemas son entidades vivas: los mide, los cuida, los estresa antes de que fallen. Su mayor valor no está en decidir cada detalle, sino en crear las condiciones para que su equipo tome buenas decisiones técnicas sin miedo.</p>
+        <p><strong>Mundo Interior:</strong> Carlos vive con la tensión constante de anticipar fallos que aún no existen. Por las noches revisa alertas automatizadas, analiza tendencias de performance, y se pregunta si están preparados para lo inesperado. A veces siente que es el único pensando a cinco años mientras todo a su alrededor piensa en la siguiente semana. Le obsesiona la resiliencia: no solo del sistema, también de su equipo. Se pregunta si lo protege lo suficiente del desgaste, si les da margen para respirar y crecer. Sueña con dejar una arquitectura que escale sin remiendos.</p>
+        <p><strong>Entorno Social:</strong> Carlos escucha a sus tech leads, a sus arquitectos, y también a los ingenieros más jóvenes que le traen ideas frescas. Tiene grupos de referencia con otros CTOs de fintechs, y sigue newsletters de arquitectura moderna, seguridad bancaria y diseño de sistemas distribuidos. Se reúne semanalmente con líderes de producto y cumplimiento para alinear objetivos. Aunque valora las perspectivas legales, desea que se integren más temprano al proceso técnico. Para él, la mejor sinergia nace en la etapa de discovery.</p>
+        <p><strong>Comportamientos, Patrones y Contradicciones:</strong> Carlos es sereno en reuniones, pero su mente está en mil capas simultáneas. Habla con claridad, toma decisiones con firmeza, pero en privado le cuesta desconectarse. Predica el respeto por los horarios, pero suele responder alertas fuera de ellos. Tiene rutinas inamovibles: ciclismo los miércoles al amanecer, caminatas familiares los domingos, revisión de sistemas los lunes antes del amanecer. Aunque es metódico, siempre deja espacio para cuestionarse.</p>
+        <p><strong>Dolores y Deseos (Pains & Gains):</strong> Lo que más lo agota es el cortoplacismo: decisiones apuradas que comprometen la salud del sistema. Le frustra que las áreas externas no comprendan los costos reales de un cambio técnico tardío. Desea reportes regulatorios mejor adaptados al lenguaje arquitectónico, espacios para planear con antelación, y una cultura de producto donde la calidad no se negocie. Anhela mirar sus dashboards y ver estabilidad, no solo rendimiento.</p>
+        <p><strong>Relación con la Tecnología:</strong> Carlos ve la tecnología como un sistema nervioso. No quiere tocar cada neurona, pero sí entender cómo se comunican. Valora el diseño simple, la automatización eficaz, los sistemas observables. No le interesa el hype: prefiere herramientas que duren, que escalen, que se expliquen solas. Enseña a su equipo a construir con propósito, no por moda. Y aunque no codifica, puede leer cualquier diagrama como quien lee partituras.</p>
+        <p class="pt-4 italic border-t border-gray-200 mt-6"><strong>Gancho Emocional Final:</strong> “Los mejores sistemas son los que nadie nota, porque nunca fallan.”</p>
+      </div>
+    </div>
+
+    <div id="mariana" class="tab-content p-6 md:p-8">
+      <h2 class="text-2xl font-bold text-gray-900">Mariana Silva – Directora de Compliance</h2>
+      <div class="mt-4 space-y-4 text-gray-700 leading-relaxed">
+        <p><strong>Escena de Apertura (Punto de Entrada Sensorial):</strong> El olor tenue del incienso de sándalo flota en el aire mientras Mariana sostiene con firmeza una taza de té verde caliente. Son las seis de la mañana en Ciudad de México, y el cielo apenas insinúa su despertar sobre los edificios del barrio Roma. Sentada en el suelo de su sala, sobre un mat de yoga aún tibio por la rutina recién concluida, Mariana respira profundamente. En unos minutos, sus hijos bajarán corriendo buscando desayuno; en una hora, los correos de Colombia, Perú y Chile empezarán a demandar su atención. Pero por este instante breve, todo está en pausa. Es su único momento de quietud.</p>
+        <p><strong>Antecedentes e Identidad:</strong> Mariana nació en Córdoba, Argentina, en el seno de una familia de clase media con valores fuertes y una ética laboral implacable. Su padre era contador y su madre, profesora de historia. Creció entre balances fiscales y relatos de luchas sociales, aprendiendo a cuestionar estructuras y a seguir reglas con igual intensidad. Migró a Buenos Aires para estudiar Derecho y, más tarde, aceptó una oferta que la llevó a Ciudad de México. Ahí no solo construyó su carrera, sino también una familia. Es madre de dos hijos pequeños y mantiene una conexión férrea con sus raíces: cada tres meses viaja a Argentina, y cada domingo llama a su madre por videollamada.</p>
+        <p><strong>Identidad Laboral y Responsabilidades:</strong> En el ecosistema vertiginoso de Challenge Bank, Mariana es mucho más que la Directora de Compliance para LATAM: es la guardiana del equilibrio entre innovación y regulación. Su trabajo es asegurarse de que cada paso que da el banco —cada nuevo producto, cada cambio operativo— respete las normativas de México, Colombia, Perú y Chile. Se siente orgullosa de ser un puente entre lo legal y lo digital, aunque a veces se sienta sola en medio de la tormenta. Cuando logra anticipar un cambio normativo y traducirlo en acciones concretas que protegen al banco sin frenar su avance, se siente invencible. Pero cuando las áreas no se alinean y el tiempo se vuelve enemigo, el estrés la carcome.</p>
+        <p><strong>Mundo Interior:</strong> Mariana es una mente en alerta constante. Por las noches, repasa mentalmente escenarios de riesgo: “¿Qué pasa si esta ley se interpreta distinto en Colombia?”, “¿Y si la nueva funcionalidad entra en conflicto con la norma chilena?”. La ansiedad la visita con frecuencia, aunque ha aprendido a contenerla entre respiraciones profundas y asanas. Sueña con una cultura donde el cumplimiento no sea una carga, sino parte del ADN de cada equipo. Lo que más desea es que la escuchen, que comprendan que el cumplimiento no es un freno, sino una promesa de sostenibilidad.</p>
+        <p><strong>Entorno Social:</strong> Se apoya en un pequeño círculo de colegas con quienes comparte confidencias y frustraciones. Escucha a consultores regulatorios, a líderes legales de otras fintechs y a mentores 
