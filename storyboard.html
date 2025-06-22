@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storyboard: Regulación 50 para Fintechs (Horizontal)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 1.5rem;
+        }
+        main {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            overflow-y: hidden;
+            flex-grow: 1;
+            padding-bottom: 1rem; /* Espacio para la barra de scroll */
+        }
+        /* Estilo de la barra de scroll horizontal */
+        main::-webkit-scrollbar {
+            height: 12px;
+        }
+        main::-webkit-scrollbar-track {
+            background: #e5e7eb;
+            border-radius: 10px;
+        }
+        main::-webkit-scrollbar-thumb {
+            background-color: #9ca3af;
+            border-radius: 10px;
+            border: 3px solid #f3f4f6;
+        }
+        .scene-card {
+            flex: 0 0 520px; /* Ancho fijo más grande para cada tarjeta */
+            height: 100%; /* La tarjeta ocupa toda la altura disponible */
+            margin-right: 1.5rem;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Asegura que el contenido no se salga */
+        }
+        .scene-card:last-child {
+            margin-right: 0;
+        }
+        .scene-image {
+            height: 240px;
+            flex-shrink: 0;
+        }
+        .scene-content {
+            padding: 1.5rem;
+            overflow-y: auto; /* Activa el scroll vertical para el contenido */
+            flex-grow: 1;
+        }
+         /* Estilo de la barra de scroll vertical interna */
+        .scene-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .scene-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .scene-content::-webkit-scrollbar-thumb {
+            background-color: #a8a29e;
+            border-radius: 10px;
+        }
+        .scene-content::-webkit-scrollbar-thumb:hover {
+            background-color: #78716c;
+        }
+        .dialogue p {
+            margin-bottom: 1rem;
+        }
+        .character-name {
+            font-weight: 700;
+            color: #1e40af; /* Azul oscuro */
+        }
+        h1, h2 {
+            font-weight: 700;
+            color: #111827;
+        }
+        .dialogue ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Título Principal del Storyboard -->
+        <header class="text-center mb-6 flex-shrink-0">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">🎬 Storyboard — Llegada de la Regulación 50 para Fintechs</h1>
+        </header>
+
+        <main>
+            <!-- Escena 1 -->
+            <section id="escena1" class="scene-card">
+                <div class="scene-image">
+                    <img class="h-full w-full object-contain" src="Escena 1.png" alt="Escena 1: Introducción a la Regulación">
+                </div>
+                <div class="scene-content">
+                    <h2 class="text-2xl font-bold mb-4">Escena 1: Introducción</h2>
+                    <div class="mb-4">
+                        <h3 class="font-semibold text-lg mb-2 text-gray-700">Contexto:</h3>
+                        <p class="text-gray-600">Reunión virtual LATAM. Mariana en CDMX, Carlos en Bogotá, Valentina en Buenos Aires, Jorge en CDMX.</p>
+                    </div>
+                    <div class="dialogue">
+                        <h3 class="font-semibold text-lg mb-2 text-gray-700">Diálogo:</h3>
+                        <p><span class="character-name">Mariana Silva (Legal):</span> "Gracias por conectarse. Vamos directo al punto: la CNBV y Banxico ya activaron el mandato del Artículo 50. Las IFPE que operamos con proveedores de nube extranjeros —como AWS o Azure— y superamos ciertos umbrales, debemos contar con una solución de contingencia alojada fuera de esa jurisdicción. El objetivo: proteger la continuidad operativa ante un bloqueo externo."</p>
+                        <p><span class="character-name">Jorge García (Negocio):</span> "¿Esto es algo que tenemos que implementar sí o sí? ¿Y cuál es el riesgo real de que eso ocurra? Porque si hablamos de montar una infraestructura paralela, eso tiene un impacto brutal en el negocio."</p>
+                         <p><span class="character-name">Valentina Rodríguez (Producto):</span> "Desde el punto de vista del producto, mientras el cambio no afecte los flujos principales del usuario, podemos mitigar. Pero necesitamos saber con qué tiempos jugamos y qué áreas se verán afectadas."</p>
+                         <p><span class="character-name">Carlos Mendoza (CTO):</span> "La implicación técnica es profunda. No estamos hablando de replicar servidores, sino de rediseñar el corazón operativo.
+                            <ul>
+                                <li>Hay que contenerizar servicios con Docker y orquestarlos en Kubernetes.</li>
+                                <li>Necesitamos definir una estrategia de resiliencia: ¿activo-activo, standby o infraestructura propia?</li>
+                                <li>Todo esto debe ser compliant con políticas de acceso, seguridad y monitoreo centralizado.</li>
+                                <li>Y lo más delicado: elegir regiones que no estén bajo jurisdicción estadounidense y asegurar compatibilidad con los flujos actuales.</li>
+                            </ul>
+                            No es solo un reto técnico, es una decisión estratégica de arquitectura."
+                         </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Escena 2 -->
+            <section id="escena2" class="scene-card">
+                 <div class="scene-image">
+                    <img class="h-full w-full object-contain" src="Escena 2.png" alt="Escena 2: Evaluación de Alternativas y Riesgos">
+                </div>
+                <div class="scene-content">
+                    <h2 class="text-2xl font-bold mb-4">Escena 2: Alternativas y Riesgos</h2>
+                     <div class="mb-4">
+                        <h3 class="font-semibold text-lg mb-2 text-gray-700">Contexto:</h3>
+                        <p class="text-gray-600">Debate estratégico. Se consideran tiempos, costos y escenarios. Todos permanecen conectados.</p>
+                    </div>
+                    <div class="dialogue">
+                         <h3 class="font-semibold text-lg mb-2 text-gray-700">Diálogo:</h3>
+                        <p><span class="character-name">Jorge García (Negocio):</span> "¿Hay alguna manera de negociar esta regulación? Los costos de cumplimiento son enormes. He hablado con colegas de otras fintechs y muchos están igual de preocupados. Si esto nos frena el crecimiento, perdemos ventaja competitiva."</p>
+                        <p><span class="character-name">Mariana Silva (Legal):</span> "El regulador busca protegernos de decisiones externas. Podemos proponer alternativas o una extensión razonable, pero con base técnica y planes sólidos."</p>
+                        <p><span class="character-name">Valentina Rodríguez (Producto):</span> "¿Esto debe estar listo y activo ya, o basta con tenerlo validado en standby?"</p>
+                        <p><span class="character-name">Mariana Silva (Legal):</span> "Según el Artículo 50, debe activarse en un plazo máximo de dos horas si falla el proveedor principal. No tiene que estar operando en simultáneo, pero sí listo y probado dentro del Plan de Continuidad de Negocio."</p>
+                        <p><span class="character-name">Carlos Mendoza (CTO):</span> "Para evaluar el impacto real necesitamos 3 a 4 semanas. Debemos mapear servicios críticos, validar sincronización, gobernanza de identidades, performance, y compatibilidad entre nubes. Esto no se improvisa. No solo se trata de configurar servidores; hablamos de validar compatibilidad de redes, migración de secretos, gobernanza de identidades y performance en ambientes de latencia distinta. Recién ahí podremos definir si optamos por un enfoque activo-activo o standby sin comprometer SLAs ni romper integraciones."</p>
+                        <p><span class="character-name">Jorge García:</span> "¿Y si reunimos a otras fintechs y hacemos una solicitud colectiva?"</p>
+                        <p><span class="character-name">Mariana Silva:</span> "Es viable y recomendable. Podemos liderarlo desde legal y sumar argumentos de tech, producto y negocio."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Escena 3 -->
+            <section id="escena3" class="scene-card">
+                <div class="scene-image">
+                   <img class="h-full w-full object-contain" src="Escena 3.png" alt="Escena 3: Conclusiones y Plan de Acción">
+                </div>
+                <div class="scene-content">
+                    <h2 class="text-2xl font-bold mb-4">Escena 3: Plan de Acción</h2>
+                     <div class="mb-4">
+                        <h3 class="font-semibold text-lg mb-2 text-gray-700">Contexto:</h3>
+                        <p class="text-gray-600">Cierre de sesión. Se definen acciones claras y colaboración regional.</p>
+                    </div>
+                    <div class="dialogue">
+                         <h3 class="font-semibold text-lg mb-2 text-gray-700">Diálogo:</h3>
+                        <p><span class="character-name">Jorge García (Negocio):</span> "Acordamos tres líneas de acción: 1) Redactar una comunicación formal al regulador. 2) Coordinar con otras fintechs. 3) Realizar un estudio técnico y financiero sobre las alternativas."</p>
+                        <p><span class="character-name">Carlos Mendoza (CTO):</span> "Desde tecnología lidero la evaluación de escenarios: activo-activo, standby y alternativa propia. Mediremos tiempo de recuperación, latencia, compatibilidad y escalabilidad."</p>
+                        <p><span class="character-name">Valentina Rodríguez (Producto):</span> "Mapearé las implicancias en el roadmap. Necesito discovery compartido desde el inicio: legal y tech en las sesiones clave."</p>
+                        <p><span class="character-name">Mariana Silva (Legal):</span> "Redacto el borrador legal y contacto a otras fintechs. Este frente común puede marcar la diferencia."</p>
+                         <p><span class="character-name">Jorge García:</span> "Excelente equipo. Esto puede transformarse en ventaja si lo gestionamos bien."</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
