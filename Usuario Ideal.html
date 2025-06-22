@@ -1,67 +1,240 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Personas - Challenge Bank</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { 
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f4f5; /* Zinc 100 */
-    }
-    .tab-button.active {
-      border-color: #3b82f6; /* Blue 500 */
-      color: #3b82f6;
-      background-color: #ffffff;
-    }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario Ideal - Perfiles Completos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .persona-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .persona-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        details > summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details .content-wrapper {
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        details[open] .content-wrapper {
+            max-height: 2000px; /* Adjust as needed */
+            opacity: 1;
+        }
+        .section-title {
+            font-weight: 600;
+            color: #374151; /* gray-700 */
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
 </head>
-<body class="p-4 sm:p-6 md:p-8">
+<body class="bg-gray-50 text-gray-800">
 
-<div class="max-w-4xl mx-auto">
-  <header class="mb-6">
-    <h1 class="text-3xl font-bold text-gray-800">Usuario Ideal</h1>
-    <p class="text-gray-600 mt-1">Perfiles detallados para entender a nuestros stakeholders clave.</p>
-  </header>
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <h1 class="text-3xl font-bold text-gray-900 text-center">Perfiles de Usuario Ideal</h1>
+            <p class="text-center text-gray-600 mt-2">Un vistazo profundo a los arquetipos clave de nuestros stakeholders.</p>
+        </div>
+    </header>
 
-  <!-- Contenedor de Pestañas -->
-  <div class="tabs border-b border-gray-200">
-    <button class="tab-button text-sm sm:text-base py-3 px-4 font-semibold text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200 active" data-tab="carlos">Carlos Mendoza</button>
-    <button class="tab-button text-sm sm:text-base py-3 px-4 font-semibold text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200" data-tab="mariana">Mariana Silva</button>
-    <button class="tab-button text-sm sm:text-base py-3 px-4 font-semibold text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200" data-tab="jorge">Jorge García</button>
-    <button class="tab-button text-sm sm:text-base py-3 px-4 font-semibold text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200" data-tab="valentina">Valentina Rodríguez</button>
-  </div>
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="space-y-8">
 
-  <!-- Contenido de las Pestañas -->
-  <div class="bg-white rounded-b-lg shadow-sm">
-    <div id="carlos" class="tab-content p-6 md:p-8 active">
-      <h2 class="text-2xl font-bold text-gray-900">Carlos Mendoza – CTO Regional</h2>
-      <div class="mt-4 space-y-4 text-gray-700 leading-relaxed">
-        <p><strong>Escena de Apertura (Punto de Entrada Sensorial):</strong> La brisa fresca de las montañas andinas atraviesa la ventana entreabierta del estudio de Carlos en Bogotá. Afuera, la ciudad vibra con su caos matutino, pero dentro, lo que domina es el resplandor tenue de dashboards en su monitor ultrapanorámico: métricas de disponibilidad, rendimiento, alertas verdes, naranjas y rojas. Carlos revisa los reportes semanales de calidad del sistema mientras toma un café negro, fuerte. Lleva puestos unos audífonos sin música, solo para aislarse del mundo. En su celular vibra una notificación: su hija tiene entrenamiento en veinte minutos. Mira el reloj. Cierra el informe, guarda el insight en la cabeza. Su día apenas empieza.</p>
-        <p><strong>Antecedentes e Identidad:</strong> Carlos creció en Medellín, entre cerros, bicicletas y computadoras desarmadas. Desde niño le fascinaba entender cómo funcionaban las cosas. Su madre, enfermera, le enseñó cuidado y paciencia; su padre, obrero, le transmitió una ética del esfuerzo silencioso. Estudió ingeniería de sistemas y fue escalando desde desarrollador hasta líder de tecnología. Pasó por varias startups antes de llegar a Challenge Bank, donde hoy es responsable de garantizar que la infraestructura de toda LATAM sea segura, escalable y adaptable al entorno regulatorio.</p>
-        <p><strong>Identidad Laboral y Responsabilidades:</strong> Carlos no programa. Su rol como CTO no es escribir código, sino garantizar que la tecnología sea el cimiento confiable de la organización. Supervisa equipos de ingeniería, arquitectura, DevOps y seguridad. Recibe reportes constantes de rendimiento, calidad del código, disponibilidad de los servicios, cumplimiento de SLAs y avances en los ciclos de desarrollo. Para él, los sistemas son entidades vivas: los mide, los cuida, los estresa antes de que fallen. Su mayor valor no está en decidir cada detalle, sino en crear las condiciones para que su equipo tome buenas decisiones técnicas sin miedo.</p>
-        <p><strong>Mundo Interior:</strong> Carlos vive con la tensión constante de anticipar fallos que aún no existen. Por las noches revisa alertas automatizadas, analiza tendencias de performance, y se pregunta si están preparados para lo inesperado. A veces siente que es el único pensando a cinco años mientras todo a su alrededor piensa en la siguiente semana. Le obsesiona la resiliencia: no solo del sistema, también de su equipo. Se pregunta si lo protege lo suficiente del desgaste, si les da margen para respirar y crecer. Sueña con dejar una arquitectura que escale sin remiendos.</p>
-        <p><strong>Entorno Social:</strong> Carlos escucha a sus tech leads, a sus arquitectos, y también a los ingenieros más jóvenes que le traen ideas frescas. Tiene grupos de referencia con otros CTOs de fintechs, y sigue newsletters de arquitectura moderna, seguridad bancaria y diseño de sistemas distribuidos. Se reúne semanalmente con líderes de producto y cumplimiento para alinear objetivos. Aunque valora las perspectivas legales, desea que se integren más temprano al proceso técnico. Para él, la mejor sinergia nace en la etapa de discovery.</p>
-        <p><strong>Comportamientos, Patrones y Contradicciones:</strong> Carlos es sereno en reuniones, pero su mente está en mil capas simultáneas. Habla con claridad, toma decisiones con firmeza, pero en privado le cuesta desconectarse. Predica el respeto por los horarios, pero suele responder alertas fuera de ellos. Tiene rutinas inamovibles: ciclismo los miércoles al amanecer, caminatas familiares los domingos, revisión de sistemas los lunes antes del amanecer. Aunque es metódico, siempre deja espacio para cuestionarse.</p>
-        <p><strong>Dolores y Deseos (Pains & Gains):</strong> Lo que más lo agota es el cortoplacismo: decisiones apuradas que comprometen la salud del sistema. Le frustra que las áreas externas no comprendan los costos reales de un cambio técnico tardío. Desea reportes regulatorios mejor adaptados al lenguaje arquitectónico, espacios para planear con antelación, y una cultura de producto donde la calidad no se negocie. Anhela mirar sus dashboards y ver estabilidad, no solo rendimiento.</p>
-        <p><strong>Relación con la Tecnología:</strong> Carlos ve la tecnología como un sistema nervioso. No quiere tocar cada neurona, pero sí entender cómo se comunican. Valora el diseño simple, la automatización eficaz, los sistemas observables. No le interesa el hype: prefiere herramientas que duren, que escalen, que se expliquen solas. Enseña a su equipo a construir con propósito, no por moda. Y aunque no codifica, puede leer cualquier diagrama como quien lee partituras.</p>
-        <p class="pt-4 italic border-t border-gray-200 mt-6"><strong>Gancho Emocional Final:</strong> “Los mejores sistemas son los que nadie nota, porque nunca fallan.”</p>
-      </div>
-    </div>
+            <!-- Carlos Mendoza Card -->
+            <div class="bg-white rounded-lg shadow-md p-6 persona-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">Carlos Mendoza</h2>
+                        <p class="text-blue-600 font-semibold">CTO Regional</p>
+                    </div>
+                </div>
+                <blockquote class="border-l-4 border-blue-200 pl-4 italic text-gray-600 my-4">
+                    “Los mejores sistemas son los que nadie nota, porque nunca fallan.”
+                </blockquote>
+                <details>
+                    <summary class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Ver Perfil Completo
+                    </summary>
+                    <div class="content-wrapper mt-4 prose max-w-none">
+                        <h4 class="section-title">Escena de Apertura (Punto de Entrada Sensorial)</h4>
+                        <p>La brisa fresca de las montañas andinas atraviesa la ventana entreabierta del estudio de Carlos en Bogotá. Afuera, la ciudad vibra con su caos matutino, pero dentro, lo que domina es el resplandor tenue de dashboards en su monitor ultrapanorámico: métricas de disponibilidad, rendimiento, alertas verdes, naranjas y rojas. Carlos revisa los reportes semanales de calidad del sistema mientras toma un café negro, fuerte. Lleva puestos unos audífonos sin música, solo para aislarse del mundo. En su celular vibra una notificación: su hija tiene entrenamiento en veinte minutos. Mira el reloj. Cierra el informe, guarda el insight en la cabeza. Su día apenas empieza.</p>
+                        <h4 class="section-title">Antecedentes e Identidad</h4>
+                        <p>Carlos creció en Medellín, entre cerros, bicicletas y computadoras desarmadas. Desde niño le fascinaba entender cómo funcionaban las cosas. Su madre, enfermera, le enseñó cuidado y paciencia; su padre, obrero, le transmitió una ética del esfuerzo silencioso. Estudió ingeniería de sistemas y fue escalando desde desarrollador hasta líder de tecnología. Pasó por varias startups antes de llegar a Challenge Bank, donde hoy es responsable de garantizar que la infraestructura de toda LATAM sea segura, escalable y adaptable al entorno regulatorio.</p>
+                        <h4 class="section-title">Identidad Laboral y Responsabilidades</h4>
+                        <p>Carlos no programa. Su rol como CTO no es escribir código, sino garantizar que la tecnología sea el cimiento confiable de la organización. Supervisa equipos de ingeniería, arquitectura, DevOps y seguridad. Recibe reportes constantes de rendimiento, calidad del código, disponibilidad de los servicios, cumplimiento de SLAs y avances en los ciclos de desarrollo. Para él, los sistemas son entidades vivas: los mide, los cuida, los estresa antes de que fallen. Su mayor valor no está en decidir cada detalle, sino en crear las condiciones para que su equipo tome buenas decisiones técnicas sin miedo.</p>
+                        <h4 class="section-title">Mundo Interior</h4>
+                        <p>Carlos vive con la tensión constante de anticipar fallos que aún no existen. Por las noches revisa alertas automatizadas, analiza tendencias de performance, y se pregunta si están preparados para lo inesperado. A veces siente que es el único pensando a cinco años mientras todo a su alrededor piensa en la siguiente semana. Le obsesiona la resiliencia: no solo del sistema, también de su equipo. Se pregunta si lo protege lo suficiente del desgaste, si les da margen para respirar y crecer. Sueña con dejar una arquitectura que escale sin remiendos.</p>
+                        <h4 class="section-title">Entorno Social</h4>
+                        <p>Carlos escucha a sus tech leads, a sus arquitectos, y también a los ingenieros más jóvenes que le traen ideas frescas. Tiene grupos de referencia con otros CTOs de fintechs, y sigue newsletters de arquitectura moderna, seguridad bancaria y diseño de sistemas distribuidos. Se reúne semanalmente con líderes de producto y cumplimiento para alinear objetivos. Aunque valora las perspectivas legales, desea que se integren más temprano al proceso técnico. Para él, la mejor sinergia nace en la etapa de discovery.</p>
+                        <h4 class="section-title">Comportamientos, Patrones y Contradicciones</h4>
+                        <p>Carlos es sereno en reuniones, pero su mente está en mil capas simultáneas. Habla con claridad, toma decisiones con firmeza, pero en privado le cuesta desconectarse. Predica el respeto por los horarios, pero suele responder alertas fuera de ellos. Tiene rutinas inamovibles: ciclismo los miércoles al amanecer, caminatas familiares los domingos, revisión de sistemas los lunes antes del amanecer. Aunque es metódico, siempre deja espacio para cuestionarse.</p>
+                        <h4 class="section-title">Dolores y Deseos (Pains & Gains)</h4>
+                        <p>Lo que más lo agota es el cortoplacismo: decisiones apuradas que comprometen la salud del sistema. Le frustra que las áreas externas no comprendan los costos reales de un cambio técnico tardío. Desea reportes regulatorios mejor adaptados al lenguaje arquitectónico, espacios para planear con antelación, y una cultura de producto donde la calidad no se negocie. Anhela mirar sus dashboards y ver estabilidad, no solo rendimiento.</p>
+                        <h4 class="section-title">Relación con la Tecnología</h4>
+                        <p>Carlos ve la tecnología como un sistema nervioso. No quiere tocar cada neurona, pero sí entender cómo se comunican. Valora el diseño simple, la automatización eficaz, los sistemas observables. No le interesa el hype: prefiere herramientas que duren, que escalen, que se expliquen solas. Enseña a su equipo a construir con propósito, no por moda. Y aunque no codifica, puede leer cualquier diagrama como quien lee partituras.</p>
+                    </div>
+                </details>
+            </div>
+            
+            <!-- Jorge García Card -->
+            <div class="bg-white rounded-lg shadow-md p-6 persona-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">Jorge García</h2>
+                        <p class="text-green-600 font-semibold">VP Comercial y Ecosistemas</p>
+                    </div>
+                </div>
+                <blockquote class="border-l-4 border-green-200 pl-4 italic text-gray-600 my-4">
+                    “No se trata de sumar usuarios. Se trata de construir un sistema donde el dinero de la gente esté bien administrado.”
+                </blockquote>
+                <details>
+                    <summary class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                        Ver Perfil Completo
+                    </summary>
+                    <div class="content-wrapper mt-4 prose max-w-none">
+                        <h4 class="section-title">Escena de Apertura (Punto de Entrada Sensorial)</h4>
+                        <p>Son las 7:15 a.m. y la cancha de squash del club en la Condesa vibra con el eco seco de una pelota contra la pared. Jorge, con la frente perlada de sudor y el cuerpo aún tenso por el esfuerzo, sonríe al recibir el impacto con firmeza. Cada golpe lo centra. Cada rally es una metáfora de su día: velocidad, anticipación, estrategia. Al terminar, se ducha rápido, se cambia, y en la caminata de regreso a casa ya va respondiendo correos en su celular. La ciudad apenas despierta, pero él ya lleva ventaja.</p>
+                        <h4 class="section-title">Antecedentes e Identidad</h4>
+                        <p>Jorge nació en Sevilla, en una familia de comerciantes donde se hablaba más de márgenes y oportunidades que de vacaciones o fines de semana. Aprendió desde chico a leer señales del mercado, a persuadir con empatía, y a moverse con agilidad. Estudió economía y comenzó su carrera en banca tradicional, pero pronto sintió que la lentitud del sistema le pesaba. Emigró a Ciudad de México buscando vértigo, impacto y expansión. Encontró todo eso —y más— en el mundo fintech, donde hoy lidera la estrategia comercial y de crecimiento de ecosistemas de Challenge Bank en tres países.</p>
+                        <h4 class="section-title">Identidad Laboral y Responsabilidades</h4>
+                        <p>Jorge vive para crecer: usuarios, revenue, productos en uso. Su obsesión es clara: expandir el ecosistema financiero del banco y hacerlo viable, escalable, medible. Supervisa la evolución de la base de usuarios, el movimiento de activos, la eficiencia comercial y la conversión de productos clave. Su trabajo consiste en identificar cuellos de botella, entender qué productos realmente administran activos con valor, y cómo cada decisión regulatoria o técnica afecta esa operación. Es pragmático, directo y orientado a resultados.</p>
+                        <h4 class="section-title">Mundo Interior</h4>
+                        <p>Jorge vive con una urgencia racionalizada. No es ansiedad, es conciencia del tiempo. Sabe que cada trimestre cuenta, que cada fricción puede costar adopción. Por las noches repasa mentalmente qué quedó pendiente, qué segmentación no está funcionando, qué métrica clave está al borde. Medita porque lo necesita: para bajar el ritmo de pensamiento. A veces se siente solo, como si el negocio fuera su idioma y los demás hablaran dialectos. Sueña con un equipo que entienda que crecimiento no es solo adquirir usuarios, sino activar, retener y administrar activos reales.</p>
+                        <h4 class="section-title">Entorno Social</h4>
+                        <p>Jorge se nutre de su red. Tiene contactos en bancos, startups, fondos y medios. Conversa con colegas de otras regiones, asiste a eventos de growth y mantiene viva su presencia en LinkedIn. Escucha podcasts de liderazgo, marketing y finanzas. Su equipo es su núcleo, pero también consulta con producto, tech y compliance. A veces siente que tiene que traducir entre ellos, como un intérprete simultáneo en medio de una mesa tensa. Cuando eso pasa, respira hondo, ajusta el pitch y sigue.</p>
+                        <h4 class="section-title">Comportamientos, Patrones y Contradicciones</h4>
+                        <p>Jorge proyecta control. Camina rápido, habla claro, presenta con convicción. Pero en la intimidad se exige más de lo que deja ver. Celebra los logros, sí, pero ya está pensando en lo que viene. Tiene rituales que lo aterrizan: squash los sábados, brunch los domingos, y sesiones de mindfulness al caer la tarde. Defiende la agilidad, pero detesta los cambios sin sentido. Cree en innovar, pero también en medir. No le teme a arriesgar, pero necesita entender dónde pisa.</p>
+                        <h4 class="section-title">Dolores y Deseos (Pains & Gains)</h4>
+                        <p>Lo que más lo agota es la falta de visibilidad técnica y legal. Detesta avanzar con una estrategia de activación y tener que frenarla por un requerimiento de último momento. Le frustra cuando las áreas no responden con la misma urgencia. Desea tableros ejecutivos claros, canales de comunicación directa y participación real en decisiones regulatorias. Sueña con un equipo donde todos entiendan que hacer crecer un ecosistema significa entender también la lógica de los activos financieros.</p>
+                        <h4 class="section-title">Relación con la Tecnología</h4>
+                        <p>Jorge no es técnico, pero sabe lo necesario para preguntar lo justo. Usa Salesforce, Looker, Notion y dashboards personalizados. Pide a sus equipos claridad, no jerga. Agradece cuando los ingenieros le explican sin rodeos. Ve la tecnología como palanca, no como caja negra. No necesita saber cómo funciona todo, pero sí saber cuándo puede fallar. Le obsesiona la escalabilidad: si no escala, no sirve.</p>
+                    </div>
+                </details>
+            </div>
 
-    <div id="mariana" class="tab-content p-6 md:p-8">
-      <h2 class="text-2xl font-bold text-gray-900">Mariana Silva – Directora de Compliance</h2>
-      <div class="mt-4 space-y-4 text-gray-700 leading-relaxed">
-        <p><strong>Escena de Apertura (Punto de Entrada Sensorial):</strong> El olor tenue del incienso de sándalo flota en el aire mientras Mariana sostiene con firmeza una taza de té verde caliente. Son las seis de la mañana en Ciudad de México, y el cielo apenas insinúa su despertar sobre los edificios del barrio Roma. Sentada en el suelo de su sala, sobre un mat de yoga aún tibio por la rutina recién concluida, Mariana respira profundamente. En unos minutos, sus hijos bajarán corriendo buscando desayuno; en una hora, los correos de Colombia, Perú y Chile empezarán a demandar su atención. Pero por este instante breve, todo está en pausa. Es su único momento de quietud.</p>
-        <p><strong>Antecedentes e Identidad:</strong> Mariana nació en Córdoba, Argentina, en el seno de una familia de clase media con valores fuertes y una ética laboral implacable. Su padre era contador y su madre, profesora de historia. Creció entre balances fiscales y relatos de luchas sociales, aprendiendo a cuestionar estructuras y a seguir reglas con igual intensidad. Migró a Buenos Aires para estudiar Derecho y, más tarde, aceptó una oferta que la llevó a Ciudad de México. Ahí no solo construyó su carrera, sino también una familia. Es madre de dos hijos pequeños y mantiene una conexión férrea con sus raíces: cada tres meses viaja a Argentina, y cada domingo llama a su madre por videollamada.</p>
-        <p><strong>Identidad Laboral y Responsabilidades:</strong> En el ecosistema vertiginoso de Challenge Bank, Mariana es mucho más que la Directora de Compliance para LATAM: es la guardiana del equilibrio entre innovación y regulación. Su trabajo es asegurarse de que cada paso que da el banco —cada nuevo producto, cada cambio operativo— respete las normativas de México, Colombia, Perú y Chile. Se siente orgullosa de ser un puente entre lo legal y lo digital, aunque a veces se sienta sola en medio de la tormenta. Cuando logra anticipar un cambio normativo y traducirlo en acciones concretas que protegen al banco sin frenar su avance, se siente invencible. Pero cuando las áreas no se alinean y el tiempo se vuelve enemigo, el estrés la carcome.</p>
-        <p><strong>Mundo Interior:</strong> Mariana es una mente en alerta constante. Por las noches, repasa mentalmente escenarios de riesgo: “¿Qué pasa si esta ley se interpreta distinto en Colombia?”, “¿Y si la nueva funcionalidad entra en conflicto con la norma chilena?”. La ansiedad la visita con frecuencia, aunque ha aprendido a contenerla entre respiraciones profundas y asanas. Sueña con una cultura donde el cumplimiento no sea una carga, sino parte del ADN de cada equipo. Lo que más desea es que la escuchen, que comprendan que el cumplimiento no es un freno, sino una promesa de sostenibilidad.</p>
-        <p><strong>Entorno Social:</strong> Se apoya en un pequeño círculo de colegas con quienes comparte confidencias y frustraciones. Escucha a consultores regulatorios, a líderes legales de otras fintechs y a mentores 
+            <!-- Mariana Silva Card -->
+             <div class="bg-white rounded-lg shadow-md p-6 persona-card">
+                 <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">Mariana Silva</h2>
+                        <p class="text-purple-600 font-semibold">Directora de Compliance</p>
+                    </div>
+                </div>
+                 <blockquote class="border-l-4 border-purple-200 pl-4 italic text-gray-600 my-4">
+                    “No quiero ser la que dice que no. Quiero ser la que ayuda a que el sí llegue sin miedo.”
+                </blockquote>
+                <details>
+                    <summary class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-purple-700 bg-purple-100 hover:bg-purple-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                        Ver Perfil Completo
+                    </summary>
+                    <div class="content-wrapper mt-4 prose max-w-none">
+                        <h4 class="section-title">Escena de Apertura (Punto de Entrada Sensorial)</h4>
+                        <p>El olor tenue del incienso de sándalo flota en el aire mientras Mariana sostiene con firmeza una taza de té verde caliente. Son las seis de la mañana en Ciudad de México, y el cielo apenas insinúa su despertar sobre los edificios del barrio Roma. Sentada en el suelo de su sala, sobre un mat de yoga aún tibio por la rutina recién concluida, Mariana respira profundamente. En unos minutos, sus hijos bajarán corriendo buscando desayuno; en una hora, los correos de Colombia, Perú y Chile empezarán a demandar su atención. Pero por este instante breve, todo está en pausa. Es su único momento de quietud.</p>
+                        <h4 class="section-title">Antecedentes e Identidad</h4>
+                        <p>Mariana nació en Córdoba, Argentina, en el seno de una familia de clase media con valores fuertes y una ética laboral implacable. Su padre era contador y su madre, profesora de historia. Creció entre balances fiscales y relatos de luchas sociales, aprendiendo a cuestionar estructuras y a seguir reglas con igual intensidad. Migró a Buenos Aires para estudiar Derecho y, más tarde, aceptó una oferta que la llevó a Ciudad de México. Ahí no solo construyó su carrera, sino también una familia. Es madre de dos hijos pequeños y mantiene una conexión férrea con sus raíces: cada tres meses viaja a Argentina, y cada domingo llama a su madre por videollamada.</p>
+                        <h4 class="section-title">Identidad Laboral y Responsabilidades</h4>
+                        <p>En el ecosistema vertiginoso de Challenge Bank, Mariana es mucho más que la Directora de Compliance para LATAM: es la guardiana del equilibrio entre innovación y regulación. Su trabajo es asegurarse de que cada paso que da el banco —cada nuevo producto, cada cambio operativo— respete las normativas de México, Colombia, Perú y Chile. Se siente orgullosa de ser un puente entre lo legal y lo digital, aunque a veces se sienta sola en medio de la tormenta. Cuando logra anticipar un cambio normativo y traducirlo en acciones concretas que protegen al banco sin frenar su avance, se siente invencible. Pero cuando las áreas no se alinean y el tiempo se vuelve enemigo, el estrés la carcome.</p>
+                        <h4 class="section-title">Mundo Interior</h4>
+                        <p>Mariana es una mente en alerta constante. Por las noches, repasa mentalmente escenarios de riesgo: “¿Qué pasa si esta ley se interpreta distinto en Colombia?”, “¿Y si la nueva funcionalidad entra en conflicto con la norma chilena?”. La ansiedad la visita con frecuencia, aunque ha aprendido a contenerla entre respiraciones profundas y asanas. Sueña con una cultura donde el cumplimiento no sea una carga, sino parte del ADN de cada equipo. Lo que más desea es que la escuchen, que comprendan que el cumplimiento no es un freno, sino una promesa de sostenibilidad.</p>
+                        <h4 class="section-title">Entorno Social</h4>
+                        <p>Se apoya en un pequeño círculo de colegas con quienes comparte confidencias y frustraciones. Escucha a consultores regulatorios, a líderes legales de otras fintechs y a mentores del viejo mundo bancario. También sigue podcasts de tecnología financiera y lee boletines legales con obsesiva disciplina. Aunque a veces se siente sola entre tantos equipos técnicos, sabe que su visión es imprescindible.</p>
+                        <h4 class="section-title">Comportamientos, Patrones y Contradicciones</h4>
+                        <p>Mariana es metódica y analítica en público, pero en privado se permite dudas. En reuniones es firme, casi inflexible, pero su corazón late fuerte por cada decisión que toma. Tiene rituales inquebrantables: yoga dos veces por semana, desayuno con sus hijos cada mañana, y una caminata silenciosa los viernes al final del día. Aunque defiende la planificación, ha aprendido a surfear la incertidumbre con la elegancia de quien ha vivido en múltiples países y sistemas.</p>
+                        <h4 class="section-title">Dolores y Deseos (Pains & Gains)</h4>
+                        <p>Lo que más la agota es la sensación de ser un engranaje aislado. Le frustra que las decisiones técnicas se tomen sin considerar su impacto regulatorio, que las implementaciones se retrasen por falta de coordinación, y que muchas veces tenga que traducir jerga legal en urgencias comprensibles para otros. Desea herramientas que le permitan anticiparse, espacios donde pueda alinear sin rogar, y reconocimiento de que su rol también construye producto.</p>
+                        <h4 class="section-title">Relación con la Tecnología</h4>
+                        <p>Mariana no es nativa digital, pero tampoco le teme a lo técnico. Se reconoce aprendiz entusiasta. Toma talleres de tecnología aplicada y agradece cuando un ingeniero se toma el tiempo para explicarle arquitectura o flujos. No codifica, pero comprende la lógica. Desea entender más para poder aportar mejor, no para controlarlo todo. Ve la tecnología como un lenguaje que aún no domina, pero que quiere hablar con fluidez.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Valentina Rodríguez Card -->
+            <div class="bg-white rounded-lg shadow-md p-6 persona-card">
+                 <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">Valentina Rodríguez</h2>
+                        <p class="text-yellow-600 font-semibold">Product Manager</p>
+                    </div>
+                </div>
+                 <blockquote class="border-l-4 border-yellow-200 pl-4 italic text-gray-600 my-4">
+                    “No quiero que el cumplimiento sea una excusa para que algo duela.”
+                </blockquote>
+                <details>
+                    <summary class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-yellow-700 bg-yellow-100 hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                        Ver Perfil Completo
+                    </summary>
+                    <div class="content-wrapper mt-4 prose max-w-none">
+                        <h4 class="section-title">Escena de Apertura (Punto de Entrada Sensorial)</h4>
+                        <p>El sol entra a raudales por los ventanales de un coworking luminoso en Palermo, donde Valentina se acomoda en su silla ergonómica, auriculares puestos, termo al lado y un mate humeante entre las manos. En la pantalla: un roadmap de producto abierto en FigJam, un canal de Slack vibrando con mensajes de legal, y un brief regulatorio de Uruguay en PDF. Sus dedos bailan entre pestañas. Escucha un beat lo-fi suave de fondo. Afuera suenan bocinas y pasos, pero adentro ella está enfocada. Son las 9:00, y hoy tiene que traducir una regulación nueva en una experiencia de usuario que no duela.</p>
+                        <h4 class="section-title">Antecedentes e Identidad</h4>
+                        <p>Valentina nació en Rosario en una familia curiosa, caótica y profundamente libre. Hija de un músico y una periodista, creció rodeada de libros, conversaciones sobre política, y arte colgado en todas las paredes. Estudió diseño industrial, pero pronto sintió que su verdadera pasión era entender cómo interactuaban las personas con los sistemas. Se volcó al UX, y luego al producto digital, fascinada por la posibilidad de diseñar no solo objetos, sino experiencias completas. Hoy lidera el desarrollo de productos para varios países desde Buenos Aires, con la certeza de que el diseño puede ser un puente entre la necesidad y la solución.</p>
+                        <h4 class="section-title">Identidad Laboral y Responsabilidades</h4>
+                        <p>Valentina se ve a sí misma como una coreógrafa de decisiones. No es quien ejecuta cada paso, pero sí quien asegura que todos se muevan al mismo ritmo. Define roadmaps, prioriza funcionalidades, alinea stakeholders, y sobre todo, mantiene viva la voz del usuario en cada conversación. Trabaja con equipos de tecnología, legal y negocio, y su reto diario es lograr que todos hablen el mismo idioma sin perder agilidad. Lo que más la enorgullece es lograr que una función compleja parezca simple. Lo que más la agota: tener que rediseñar en el último minuto por normativas mal comunicadas.</p>
+                        <h4 class="section-title">Mundo Interior</h4>
+                        <p>Valentina quiere hacer productos que no solo funcionen, sino que respeten a quien los usa. Le quita el sueño imaginar una experiencia mal resuelta, o decisiones apresuradas que terminan generando fricción. Tiene una voz interna exigente, que le exige claridad, pero también otra, más compasiva, que le recuerda que está aprendiendo. Medita cada mañana porque necesita silencio antes del caos. Sueña con procesos donde legal y tech trabajen desde el boceto, no desde la corrección. Quiere crear con tiempo, no con excusas.</p>
+                        <h4 class="section-title">Entorno Social</h4>
+                        <p>Valentina escucha con atención a sus usuarios, pero también a sus colegas de producto, diseñadores y mentores en el ecosistema fintech. Es activa en comunidades de PMs, asiste a eventos, sigue podcasts como si fueran series. Tiene referentes que mezclan estrategia con empatía. Valora profundamente a los equipos que se toman el tiempo de explicarse entre áreas. Le irrita el “esto no se puede” sin contexto. Cree en el poder del aprendizaje cruzado: cuando legal entiende wireframes y tech comprende la intención del journey, el resultado se transforma.</p>
+                        <h4 class="section-title">Comportamientos, Patrones y Contradicciones</h4>
+                        <p>En sesiones de trabajo, Valentina es ordenada, enfocada y muy resolutiva. Pero detrás de esa eficiencia hay una mente que vuela: visualiza flujos, dibuja escenarios, anticipa riesgos. Suele revisar sus sprints en Notion antes de dormir, y anotar ideas en su app de notas mientras camina por el parque. Dice que no es perfeccionista, pero a veces reitera pequeños cambios hasta sentirlos “correctos”. Los domingos son sagrados: brunch con amigas, paseo sin celular, y algún rato de lectura lenta. No necesita estar conectada todo el tiempo, pero necesita sentir que lo que hace conecta.</p>
+                        <h4 class="section-title">Dolores y Deseos (Pains & Gains)</h4>
+                        <p>La fatiga más constante de Valentina es la falta de integración entre áreas. Le frustra tener que “defender al usuario” como si fuera una batalla, en lugar de una causa común. Sufre cuando el roadmap se desorganiza por cambios normativos que llegan sin explicación o cuando tech y legal no se comunican entre sí. Desea briefs claros y cruzados, sesiones de discovery conjuntas, y capacitaciones prácticas que le den contexto real. Sueña con lanzar productos que respeten tanto la ley como la experiencia.</p>
+                        <h4 class="section-title">Relación con la Tecnología</h4>
+                        <p>Valentina es fluida en herramientas digitales: Figma, Notion, Miro, Productboard, Airtable. No programa, pero entiende arquitectura lo suficiente como para anticipar implicancias. Habla con devs en sus términos, y con abogados en visuales. Se siente en casa entre productos SaaS y patrones de diseño. Para ella, la tecnología es un medio creativo: no algo que impresiona, sino algo que habilita. Le emociona cuando una solución técnica resuelve elegantemente una necesidad humana.</p>
+                    </div>
+                </details>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+            <p>&copy; 2024 - Creado para visualizar perfiles de usuario.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('details').forEach((el) => {
+            el.addEventListener('toggle', function(e) {
+                if (this.open) {
+                    const summary = this.querySelector('summary');
+                    summary.textContent = 'Ocultar Perfil';
+                } else {
+                    const summary = this.querySelector('summary');
+                    summary.textContent = 'Ver Perfil Completo';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
